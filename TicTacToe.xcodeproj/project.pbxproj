@@ -18,6 +18,9 @@
 		044334E42A32AF9200AB67D5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044334E32A32AF9200AB67D5 /* Fonts.swift */; };
 		044334E62A32B45000AB67D5 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044334E52A32B45000AB67D5 /* Text.swift */; };
 		044334E82A33C9DE00AB67D5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044334E72A33C9DE00AB67D5 /* Color.swift */; };
+		044334ED2A33E8E200AB67D5 /* HomeScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044334EC2A33E8E200AB67D5 /* HomeScreenModel.swift */; };
+		044334F02A33F4E400AB67D5 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044334EF2A33F4E400AB67D5 /* Move.swift */; };
+		044334F22A33F51D00AB67D5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044334F12A33F51D00AB67D5 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		044334E32A32AF9200AB67D5 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		044334E52A32B45000AB67D5 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		044334E72A33C9DE00AB67D5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		044334EC2A33E8E200AB67D5 /* HomeScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenModel.swift; sourceTree = "<group>"; };
+		044334EF2A33F4E400AB67D5 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
+		044334F12A33F51D00AB67D5 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,7 @@
 		0412C8532A1E506B00B91ABD /* TicTacToeApp */ = {
 			isa = PBXGroup;
 			children = (
+				044334EE2A33F4C400AB67D5 /* Models */,
 				044334E02A32AA4C00AB67D5 /* Extensions */,
 				044334D62A32A84F00AB67D5 /* Resources */,
 				044334EA2A33D3D800AB67D5 /* Screens */,
@@ -142,8 +149,18 @@
 			isa = PBXGroup;
 			children = (
 				0412C8562A1E506B00B91ABD /* HomeScreen.swift */,
+				044334EC2A33E8E200AB67D5 /* HomeScreenModel.swift */,
 			);
 			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		044334EE2A33F4C400AB67D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				044334EF2A33F4E400AB67D5 /* Move.swift */,
+				044334F12A33F51D00AB67D5 /* Player.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,8 +237,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044334F02A33F4E400AB67D5 /* Move.swift in Sources */,
 				0412C8572A1E506B00B91ABD /* HomeScreen.swift in Sources */,
 				044334E42A32AF9200AB67D5 /* Fonts.swift in Sources */,
+				044334ED2A33E8E200AB67D5 /* HomeScreenModel.swift in Sources */,
+				044334F22A33F51D00AB67D5 /* Player.swift in Sources */,
 				044334E62A32B45000AB67D5 /* Text.swift in Sources */,
 				044334E82A33C9DE00AB67D5 /* Color.swift in Sources */,
 				0412C8552A1E506B00B91ABD /* TicTacToeAppApp.swift in Sources */,

@@ -7,32 +7,41 @@
 
 import SwiftUI
 
-let columns: [GridItem] = [GridItem(.flexible()),
-                           GridItem(.flexible()),
-                           GridItem(.flexible())]
-
 struct HomeScreen: View {
+    
+    let columns: [GridItem] = [GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible())]
+    @StateObject private var model = Model()
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
                 Spacer()
-                LazyVGrid(columns: columns, spacing: 10) {
+                LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(0..<9){ index in
-                        ZStack {
-                            Circle()
-                                .fill(Color.pinkPrimary)
-                                .frame(width: geometry.size.width/3-20,
-                                       height: geometry.size.width/3-20)
-                            Image(systemName: "xmark")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .foregroundColor(.yellowPrimary)
+                        Button {
+                            if model.isSquareOccupied(forIndex: index) { return }
+                            model.moves[index] =  Move(player: .human, boardIndex: index)
+                            model.computerMove()
+                            
+                        } label: {
+                            ZStack {
+                                Rectangle()
+                                    .fill(Color.pinkPrimary.opacity(0.8))
+                                    .frame(width: geometry.size.width/3-30,
+                                           height: geometry.size.width/3-30)
+                                Image(systemName: model.moves[index]?.indecator ?? "")
+                                    .resizable()
+                                    .frame(width: 60, height: 60)
+                                    .foregroundColor(.yellowPrimary)
+                            }
                         }
-                    }
+
+                }
+                    
                 }
                 
                 Spacer()
-            }
+            }.padding(.horizontal, 16)
             
         }.background(Color.yellowSecondary)
         
