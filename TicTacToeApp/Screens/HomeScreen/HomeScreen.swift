@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeScreen: View {
-    
+     
     let columns: [GridItem] = [GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible())]
     @StateObject private var model = Model()
     
@@ -20,8 +20,9 @@ struct HomeScreen: View {
                     ForEach(0..<9){ index in
                         Button {
                             if model.isSquareOccupied(forIndex: index) { return }
-                            model.moves[index] =  Move(player: .human, boardIndex: index)
+                            model.humanMove(index: index)
                             model.computerMove()
+
                             
                         } label: {
                             ZStack {
@@ -34,7 +35,7 @@ struct HomeScreen: View {
                                     .frame(width: 60, height: 60)
                                     .foregroundColor(.yellowPrimary)
                             }
-                        }
+                        }.disabled(model.isGameBoardDisabled)
 
                 }
                     

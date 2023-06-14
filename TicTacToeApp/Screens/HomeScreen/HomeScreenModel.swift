@@ -11,6 +11,7 @@ extension HomeScreen {
         
         @Published var moves: [Move?] = Array(repeating: nil, count: 9)
         @Published var computerMovePosition: Int? = nil
+        @Published var isGameBoardDisabled = false
         
         func isSquareOccupied(forIndex index: Int) -> Bool {
             return self.moves.contains(where: { $0?.boardIndex == index })
@@ -25,16 +26,19 @@ extension HomeScreen {
         }
         
         func computerMove() {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                 self.computerMovePosition = self.determineMoveComputerPosition()
                 if let computerMovePosition = self.computerMovePosition {
                     self.moves[computerMovePosition] = Move(player: .robot, boardIndex: computerMovePosition)
                 }
+                self.isGameBoardDisabled = false
+
             }
         }
         
         func humanMove(index: Int) {
             if isSquareOccupied(forIndex: index) { return }
+            self.isGameBoardDisabled = true
             moves[index] =  Move(player: .human, boardIndex: index)
         }
     }
